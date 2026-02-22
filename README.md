@@ -35,4 +35,12 @@ This repository includes:
 All components necessary to reproduce the document are provided.
 
 ---
+## Team
+
+**Team Name:** GridSense Analytics
+
+- Esther Omoyiwola— Electrical & Computer Engineering (Team Lead)
+- Tagayi Roland Kobla— Electrical & Computer Engineering
+- Yvonne Okafor — Computer Science
+- Akinfewa Ayobami — Mechanical Engineering
 
