@@ -13,57 +13,46 @@
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
 \begin{document}
 
 \title{A Unified Comparative Framework for Short-Term Load Forecasting: Multi-Paradigm Machine Learning Evaluation with Weather-Integrated Features}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\author{\IEEEauthorblockN{Esther Omoyiwola}
+\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+\textit{Georgia Southern University}\\
+Statesboro, Georgia \\
+eo03837@georgiasouthern.edu}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Roland Kobla Tagayi}
+\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+\textit{Georgia Southern University}\\
+Statesboro, Georgia \\
+rolandtagayi@gmail.com}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Yvonne Okafor}
+\IEEEauthorblockA{\textit{Computer Science} \\
+\textit{Georgia Southern University}\\
+Statesboro, Georgia \\
+yo00569@georgiasouthern.edu}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Akinfenwa Ayobami}
+\IEEEauthorblockA{\textit{Mechanical Engineering} \\
+\textit{Georgia Southern University}\\
+Statesboro, Georgia \\
+akinfenwaas@gmail.com}
 }
-
-
-
-
-
 
 \maketitle
 
 \begin{abstract}
-This project explores the application of data science and machine learning techniques for energy load forecasting using publicly available U.S. electricity demand data. Historical load data is analyzed, preprocessed, and used to develop predictive models for short-term load estimation. The study demonstrates a basic workflow for applying machine learning in energy-related forecasting problems.
+
+Short-term electricity load forecasting (STLF) is essential for reliable grid operation, economic dispatch, and energy management in modern power systems characterized by renewable integration and climate-driven variability. Over the past decades, forecasting methodologies have evolved from traditional statistical techniques to machine learning and deep learning architectures. However, inconsistencies in benchmarking practices, preprocessing pipelines, and weather feature integration limit the interpretability and comparability of reported results. This study presents a structured literature review and proposes a unified comparative evaluation framework for short-term electricity load forecasting. The review synthesizes traditional statistical models, machine learning approaches, and deep learning architectures, with particular emphasis on the integration of meteorological variables. Furthermore, the study highlights the need for systematic weather impact sensitivity analysis to quantify the marginal contribution of environmental features to predictive performance across model classes.
+
+By identifying methodological gaps and inconsistencies in existing studies, this work establishes a reproducible foundation for fair model comparison and weather-aware forecasting design. The proposed framework aims to bridge model performance evaluation with environmental dependency analysis, contributing toward more robust and practically applicable load forecasting systems.
+
 \end{abstract}
+
 
 \bigskip
 
@@ -71,16 +60,12 @@ This project explores the application of data science and machine learning techn
 Energy load forecasting, machine learning, data science, time-series analysis
 \end{IEEEkeywords}
 
-
 \section{Introduction}
 \IEEEPARstart{A}{ccurate} short-term electricity load forecasting (STLF) is a foundational requirement for modern power system operation. In electricity markets and vertically integrated utilities alike, reliable load prediction enables efficient unit commitment, economic dispatch, reserve allocation, and real-time balancing. Inaccurate forecasts can lead to over-generation, increasing operational costs, or under-generation, risking system instability and service interruptions. With increasing penetration of renewable energy sources and demand-side variability, the forecasting problem has become more complex, nonlinear, and weather-sensitive.
-
+\smallskip
 Over the past decades, forecasting methodologies have evolved from traditional statistical techniques such as ARIMA and SARIMA to machine learning (ML) models and, more recently, deep learning (DL) architectures including recurrent neural networks (RNNs) and long short-term memory (LSTM) networks. While these approaches demonstrate promising accuracy improvements, the literature reveals inconsistencies in benchmarking practices, feature engineering pipelines, and evaluation metrics. Moreover, although meteorological variables are commonly incorporated into forecasting models, limited studies systematically analyze the sensitivity and marginal impact of weather features across different modeling paradigms.
-
+\smallskip
 This literature review aims to provide a structured and critical synthesis of forecasting methodologies relevant to short-term electricity load prediction. The scope of this review includes traditional statistical models, machine learning-based approaches, deep learning architectures, and studies integrating weather variables into forecasting frameworks. Particular emphasis is placed on identifying research gaps related to unified model comparison and structured weather impact analysis, which form the foundation of the proposed study.
-
-
-
 
 \section{Literature Review}
 \smallskip
@@ -89,11 +74,11 @@ This literature review aims to provide a structured and critical synthesis of fo
 
 Short-term electricity load forecasting (STLF) remains one of the most extensively studied and operationally critical problems in modern power system engineering. Accurate short-horizon demand prediction supports unit commitment, economic dispatch, reserve scheduling, congestion management, and real-time balancing in both regulated and deregulated electricity markets. As power systems transition toward high renewable penetration and distributed energy integration, the complexity of net load behavior has increased substantially, amplifying the technical challenges associated with reliable short-term forecasting\cite{10630814}.
 
-Electricity demand exhibits multi-scale temporal dependencies characterized by strong intra-day, weekly, and seasonal periodicities, superimposed with stochastic variations driven by meteorological conditions, socio-economic activity, and behavioral consumption patterns. Unlike conventional stationary time-series processes, modern electricity load profiles are influenced by nonlinear interactions between weather variables, calendar effects, distributed energy resources, and emerging electrification trends such as electric vehicles and demand response programs. These dynamics introduce non-stationarity, heteroscedasticity, and structural breaks that complicate model generalization and stability.
+Electricity demand exhibits multi-scale temporal dependencies characterized by strong intra-day, weekly, and seasonal periodicity, superimposed with stochastic variations driven by meteorological conditions, socio-economic activity, and behavioral consumption patterns. Unlike conventional stationary time-series processes, modern electricity load profiles are influenced by nonlinear interactions between weather variables, calendar effects, distributed energy resources, and emerging electrification trends such as electric vehicles and demand response programs. These dynamics introduce non-stationarity, heteroscedasticity, and structural breaks that complicate model generalization and stability.
 
 Historically, statistical methods such as Autoregressive integrated moving average (ARIMA)\cite{8614252}, multiple linear regression, and exponential smoothing formed the methodological backbone of STLF research. While effective under assumptions of linear dependence and stable seasonal patterns, these models demonstrate limited capacity to capture nonlinear feature interactions and abrupt demand shifts in highly dynamic grid environments. The limitations of purely statistical approaches motivated the transition toward data-driven machine learning paradigms capable of modeling complex, high-dimensional relationships.
 
-Over the past decade, ensemble learning techniques (e.g., Random Forest, Gradient Boosting), kernel-based methods (e.g., Support Vector Regression), and deep learning architectures (e.g., LSTM, CNN-LSTM hybrids) have been extensively investigated for STLF applications\cite{10062299}. These models helps to improve representational flexibility and nonlinear modeling capacity; however, literature surveys consistently highlight persistent challenges including model overfitting, interpretability limitations, inconsistent preprocessing pipelines, and sensitivity to forecast horizon selection. 
+Over the past decade, ensemble learning techniques (e.g., Random Forest, Gradient Boosting), kernel-based methods (e.g., Support Vector Regression), and deep learning architectures (e.g., LSTM, CNN-LSTM hybrids) have been extensively investigated for STLF applications\cite{10062299}. These models help to improve representational flexibility and nonlinear modeling capacity; however, literature surveys consistently highlight persistent challenges including model overfitting, interpretability limitations, inconsistent preprocessing pipelines, and sensitivity to forecast horizon selection. 
 
 Despite significant methodological advancements, many existing studies prioritize marginal improvements in aggregate error metrics without systematically evaluating model robustness, stability across multiple temporal horizons, and the quantified contribution of exogenous weather variables under unified experimental conditions. As renewable variability and demand-side complexity continue to intensify, there remains a pressing need for structured, reproducible, and operationally grounded comparative analyses that extend beyond single-model performance reporting.
 
@@ -101,15 +86,15 @@ Despite significant methodological advancements, many existing studies prioritiz
 
 The methodological evolution of short-term electricity load forecasting has progressed from classical statistical time-series modeling to advanced machine learning and deep learning paradigms. Early forecasting frameworks were dominated by linear regression, autoregressive integrated moving average (ARIMA), and exponential smoothing techniques, which assume linear dependencies and relatively stable seasonal structures. While effective under structured conditions, these models often exhibit limited adaptability to nonlinear demand behavior and complex feature interactions\cite{9068850}.
 
-To overcome these limitations, machine learning models were increasingly adopted for STLF applications. Support Vector Regression (SVR), Random Forest (RF), Gradient Boosting Machines (GBM), Extreme Gradient Boosting (XGBoost) and many more demonstrated superior nonlinear modeling capability and improved robustness to multicollinearity. Ensemble-based techniques in particular gained prominence due to their ability to reduce variance and improve generalization performance across diverse load profiles\cite{10297192}.
+To overcome these limitations, machine learning models were increasingly adopted for STLF applications. Support Vector Regression (SVR), Random Forest (RF), Gradient Boosting Machines (GBM), Extreme Gradient Boosting (XGBoost), and many more demonstrated superior nonlinear modeling capability and improved robustness to multicollinearity. Ensemble-based techniques in particular gained prominence due to their ability to reduce variance and improve generalization performance across diverse load profiles\cite{10297192}.
 
-In recent years, deep learning architectures have further transformed the STLF landscape. Recurrent neural networks (RNN), Long Short-Term Memory (LSTM) networks, Gated Recurrent Units (GRU), and hybrid CNN-LSTM architectures have been extensively applied to capture temporal dependencies and sequential patterns in electricity demand data . Comprehensive reviews highlight that deep learning models outperform traditional statistical approaches in high-resolution and large-scale datasets, particularly under conditions of strong nonlinearity and weather dependency.
+In recent years, deep learning architectures have further transformed the STLF landscape. Recurrent neural networks (RNN), Long Short-Term Memory (LSTM) networks, Gated Recurrent Units (GRU), and hybrid CNN-LSTM architectures have been extensively applied to capture temporal dependencies and sequential patterns in electricity demand data. Comprehensive reviews highlight that deep learning models outperform traditional statistical approaches in high-resolution and large-scale datasets, particularly under conditions of strong nonlinearity and weather dependency.
 
-However, despite demonstrated accuracy improvements, recent surveys emphasize persistent challenges including interpretability limitations, high computational cost, hyperparameter sensitivity, and model instability across seasonal regimes. These observations suggest that model selection for STLF should not rely solely on average error minimization but instead consider robustness, scalability, and operational usability.
+However, despite demonstrated accuracy improvements, recent surveys emphasize persistent challenges, including interpretability limitations, high computational cost, hyperparameter sensitivity, and model instability across seasonal regimes. These observations suggest that model selection for STLF should not rely solely on average error minimization but instead consider robustness, scalability, and operational usability.
 
 \subsubsection{Structural Characteristics and Complexity of Electricity Load}
 
-Electricity demand exhibits multi-scale temporal structure characterized by strong periodic patterns at daily, weekly, and seasonal levels. Intra-day variations are typically driven by human activity cycles, while weekly and seasonal trends reflect industrial schedules and climatic shifts. These recurring structures introduce deterministic components that can be partially modeled through trend and seasonality decomposition techniques.
+Electricity demand exhibits a multi-scale temporal structure characterized by strong periodic patterns at daily, weekly, and seasonal levels. Intra-day variations are typically driven by human activity cycles, while weekly and seasonal trends reflect industrial schedules and climatic shifts. These recurring structures introduce deterministic components that can be partially modeled through trend and seasonality decomposition techniques.
 
 However, beyond deterministic periodicity, electricity load demonstrates significant nonlinear and stochastic behavior. Meteorological variables such as temperature and humidity strongly influence demand levels, particularly in regions with high heating and cooling requirements. The relationship between temperature and electricity consumption is inherently nonlinear, often exhibiting threshold effects and asymmetric responses during extreme weather conditions.
 
@@ -127,9 +112,6 @@ These methodological challenges have progressively shifted research focus toward
 
 Therefore, the forecasting problem in modern power systems extends beyond pure error minimization. It requires a balanced evaluation of accuracy, stability, and operational reliability under evolving system conditions.
 
-
-
-
 Traditional statistical approaches have historically formed the backbone of STLF. Before the widespread adoption of machine learning, utilities relied heavily on time-series models such as Autoregressive (AR), Moving Average (MA), Autoregressive Moving Average (ARMA), and ARIMA, including seasonal extensions such as Seasonal Autoregressive Integrated Moving Average (SARIMA). These models are grounded in statistical theory and assume that future electricity demand can be expressed as a linear function of past observations and stochastic error terms. Their interpretability, relatively low computational burden, and strong theoretical foundations made them attractive for operational grid forecasting, particularly in structured and moderately stationary environments.
 
 A recent systematic study by \cite{Pinheiro} explicitly frames STLF as a multi-level problem, from the system level down to low-voltage secondary substations, and proposes an interpretable step-by-step modeling workflow that incorporates historical load, calendar effects, and weather variables as structured predictors. Their analysis highlights that even when the final forecasting framework is not purely ARIMA/SARIMA, the classical explicit seasonal, cycle modeling, and carefully defined exogenous drivers still provide strong value for operational clarity and reproducibility.
@@ -146,32 +128,31 @@ In parallel, other studies increasingly use deep learning models either to incor
 
 Recent reviews focused on short-term forecasting, which reinforces that weather integration is typically beneficial, but the magnitude of improvement depends on feature engineering, data alignment, hourly matching, and lag design, and the model’s ability to express nonlinearities issues that become central when you compare traditional statistical baselines to ML and LSTM models \cite{Eren}.
 
-
 \subsection{Machine Learning Models for Power Load Forecasting}
 
-Recent research in power load forecasting has seen a considerable shift toward machine learning (ML) algorithms, largely  because they have exhibited the most reliable accuracy in predicting power demands~\cite{oluajayi2022}. Traditional statistical models frequently struggle to capture the intricate, nonlinear interactions between variables such as time and temperature. Machine learning techniques are preferred because of their ability to capture these nonlinear relationships; they can interpret calendar markers as external inputs, allowing them to better comprehend and predict power load demands~\cite{vivas2020}. Systematic data suggests that forecasting accuracy is heavily horizon-dependent. Shorter horizons often have a lower error, whereas medium to long-term forecasting is more uncertain and error-prone due to compounding behavioral and economic unpredictability~\cite{hammad2020}.
+Recent research in power load forecasting has seen a considerable shift toward machine learning (ML) algorithms, largely because they have exhibited the most reliable accuracy in predicting power demands~\cite{oluajayi2022}. Traditional statistical models frequently struggle to capture the intricate, nonlinear interactions between variables such as time and temperature. Machine learning techniques are preferred because of their ability to capture these nonlinear relationships; they can interpret calendar markers as external inputs, allowing them to better comprehend and predict power load demands~\cite{vivas2020}. Systematic data suggests that forecasting accuracy is heavily horizon-dependent. Shorter horizons often have a lower error, whereas medium to long-term forecasting is more uncertain and error-prone due to compounding behavioral and economic unpredictability~\cite{hammad2020}.
 
-Modern reviews underscore that forecasting performance is determined by an amalgamation of model type, feature engineering, and dataset properties. For example, a model designed for consistent grid-level demand may struggle with the fluctuating "noise" of household smart meters. Ultimately, success requires precisely matching the analytical tools and data preparation to the specific scale of the problem. Vivas, et al. \cite{vivas2020} emphasize that the majority of published studies remain site-specific, making cross-study generalization difficult and limiting reproducibility \cite{vivas2020}. Similarly, Azeem, et al. \cite{azeem2021} highlight that forecasting model accuracy varies significantly among sectors (residential, commercial, industrial) and generation modalities, especially when renewables are included into the supply system \cite{azeem2021} . This reinforces the conclusion that model superiority cannot be claimed universally without validation across diverse datasets.
+Modern reviews underscore that forecasting performance is determined by an amalgamation of model type, feature engineering, and dataset properties. For example, a model designed for consistent grid-level demand may struggle with the fluctuating "noise" of household smart meters. Ultimately, success requires precisely matching the analytical tools and data preparation to the specific scale of the problem. Vivas, et al. \cite{vivas2020} emphasize that the majority of published studies remain site-specific, making cross-study generalization difficult and limiting reproducibility \cite{vivas2020}. Similarly, Azeem, et al. \cite{azeem2021} highlight that forecasting model accuracy varies significantly among sectors (residential, commercial, industrial) and generation modalities, especially when renewables are included in the supply system \cite{azeem2021}. This reinforces the conclusion that model superiority cannot be claimed universally without validation across diverse datasets.
 
 \subsection{Regression-Based and Econometric Models as Baselines}
 
-Although modern forecasting literature is dominated by newer Machine Learning algorithms, regression-based models are still extensively employed as baselines due to their interpretability and low computational cost. Recent research confirms that regression techniques are especially successful for long-term load forecasting (LTLF), where demand follows smoother seasonal and economic cycles \cite{hammad2020} . However, regression models perform poorly in short-term load forecasting (STLF) because they cannot effectively represent nonlinear weather-load interactions or abrupt behavioral fluctuations \cite{habbak2023,khalil2022} .
+Although modern forecasting literature is dominated by newer Machine Learning algorithms, regression-based models are still extensively employed as baselines due to their interpretability and low computational cost. Recent research confirms that regression techniques are especially successful for long-term load forecasting (LTLF), where demand follows smoother seasonal and economic cycles \cite{hammad2020} . However, regression models perform poorly in short-term load forecasting (STLF) because they cannot effectively represent nonlinear weather-load interactions or abrupt behavioral fluctuations \cite{habbak2023,khalil2022}.
 
 In the findings of Zhang, et al. \cite{zhang2021}, regression models are commonly used in load forecasting situations, but they are typically outperformed when nonlinear learners are incorporated, particularly when the dataset incorporates complicated operational conditions and high-frequency sensor observations \cite{zhang2021}. In a similar vein, Vivas, et al. \cite{vivas2020} classify regression as a classical statistical/mathematical forecasting, highlighting that while regression is still relevant, it rarely achieves state-of-the-art performance when evaluated using MAPE across multiple geographic regions \cite{vivas2020}.
 
-Therefore, regression-based approaches are still most effective when interpretability is crucial and forecasting jobs require coarse temporal granularity (monthly/annual), but they are insufficient for high-resolution STLF applications.
+Therefore, regression-based approaches are still most effective when interpretability is crucial, and forecasting jobs require coarse temporal granularity (monthly/annual), but they are insufficient for high-resolution STLF applications.
 
 \subsection{Support Vector Regression (SVR) and Kernel-Based Learning}
 
 Support Vector Regression (SVR) continues to be widely adopted in load forecasting research due to its capacity to model nonlinear demand relationships through kernel transformations. Recent literature indicates that SVR is frequently used in STLF applications, particularly in cases where datasets are moderate in size and the feature space is carefully engineered (manually selected, cleaned, and transformed) \cite{khalil2022}. In microgrid forecasting contexts, SVR is often reported as a competitive benchmark due to its stability and strong performance under limited training data \cite{wazirali2023}.
 
-However, emerging evidence suggests that SVR performance deteriorates as dataset size and volatility grow. Zhang, et al. \cite{zhang2021} report that while SVR remains a popular choice for predicting building energy consumption, it is frequently surpassed by ensemble tree-based approaches such as Random Forest or XGBoost, particularly when the model is presented with larger, more complicated datasets \cite{zhang2021}. Furthermore, Azeem, et al. \cite{azeem2021}. establish that the SVR predicting error differs dramatically across generating modalities. SVR, in particular, performs poorly when a large number of renewable energy sources (such as solar or wind) are added to the mix, because renewable-driven intermittency results in nonstationary demand patterns that SVR struggles to process \cite{azeem2021}.
+However, emerging evidence suggests that SVR performance deteriorates as dataset size and volatility grow. Zhang, et al. \cite{zhang2021} report that while SVR remains a popular choice for predicting building energy consumption, it is frequently surpassed by ensemble tree-based approaches such as Random Forest or XGBoost, particularly when the model is presented with larger, more complicated datasets \cite{zhang2021}. Furthermore, Azeem, et al. \cite{azeem2021} establish that the SVR predicting error differs dramatically across generating modalities. SVR, in particular, performs poorly when a large number of renewable energy sources (such as solar or wind) are added to the mix, because renewable-driven intermittency results in nonstationary demand patterns that SVR struggles to process \cite{azeem2021}.
 
 A consistent theme is that SVR performs well in controlled STLF scenarios but lacks scalability and adaptability relative to modern ensemble-based ML frameworks.
 
 \subsection{Tree-Based Models: Decision Trees and Random Forests (RF)}
 
-Tree-based learning methods, particularly Random Forest (RF), continue to be among the most widely reported ML strategies for load forecasting due to their ability to capture nonlinear feature interactions without relying on strong parametric assumptions. Multiple literature evaluate RF as a high-performing and robust method for demand forecasting, particularly when climatic data and lagged load terms are included \cite{habbak2023,azeem2021}.
+Tree-based learning methods, particularly Random Forest (RF), continue to be among the most widely reported ML strategies for load forecasting due to their ability to capture nonlinear feature interactions without relying on strong parametric assumptions. Multiple studies evaluate RF as a high-performing and robust method for demand forecasting, particularly when climatic data and lagged load terms are included \cite{habbak2023,azeem2021}.
 
 The main advantage of RF over single decision trees is its resistance to overfitting, as well as its ability to quantify feature importance, which improves interpretability in operational planning. Zhang, et al. \cite{zhang2021} report RF as one of the most often utilized ML algorithms in building load prediction tasks, owing to its ability to balance accuracy with model transparency \cite{zhang2021}. Similarly, Vivas, et al. \cite{vivas2020} identify RF as one of the most frequently appearing ML models among studies reporting MAPE performance results, demonstrating its broad adoption across geographic forecasting applications \cite{vivas2020}.
 
@@ -179,7 +160,7 @@ However, research suggests that boosting-based ensembles frequently outperform R
 
 \subsection{Boosting Models: XGBoost and Gradient Boosting Machines}
 
-Boosting-based ensemble learning, namely gradient boosting decision trees, has emerged as the dominating algorithm in modern load forecasting research. According to multiple evaluations, boosting models outperform both linear regression and RF in STLF tasks because of their capacity to iteratively correct prediction residuals and capture high-order nonlinear relationships~\cite{azeem2021,habbak2023}.Habbak, et al. \cite{habbak2023} identified boosting algorithms as among the most effective AI-based forecasting families in smart grid situations, owing to their reliance on structured feature representations such as temperature, time-of-day, and weekday/holiday signals \cite{habbak2023}. Similarly, Zhang, et al. \cite{zhang2021} describe boosting-based approaches as highly effective in developing load prediction models, especially when datasets include high-dimensional metadata and engineered time-series lags \cite{zhang2021}. Vivas, et al. \cite{vivas2020} bolster this conclusion by reporting that ML models including exogenous variables regularly yield lower MAPE scores than models that depend solely on historical load values \cite{vivas2020}.
+Boosting-based ensemble learning, namely gradient boosting decision trees, has emerged as the dominating algorithm in modern load forecasting research. According to multiple evaluations, boosting models outperform both linear regression and RF in STLF tasks because of their capacity to iteratively correct prediction residuals and capture high-order nonlinear relationships~\cite{azeem2021,habbak2023}. Habbak, et al. \cite{habbak2023} identified boosting algorithms as among the most effective AI-based forecasting families in smart grid situations, owing to their reliance on structured feature representations such as temperature, time-of-day, and weekday/holiday signals \cite{habbak2023}. Similarly, Zhang, et al. \cite{zhang2021} describe boosting-based approaches as highly effective in developing load prediction models, especially when datasets include high-dimensional metadata and engineered time-series lags \cite{zhang2021}. Vivas, et al. \cite{vivas2020} bolster this conclusion by reporting that ML models, including exogenous variables, regularly yield lower MAPE scores than models that depend solely on historical load values \cite{vivas2020}.
 
 However, boosting methods introduce challenges in hyperparameter sensitivity and reproducibility. Many studies optimize boosting architecture on single datasets, limiting the external validity of their results. Moreover, model interpretability remains weaker than regression baselines, despite the availability of feature importance tools.
 
@@ -249,7 +230,7 @@ An emerging trend in forecasting research is the increasing use of hybrid ML pip
 
 Azeem, et al. \cite{azeem2021} emphasize that modern forecasting systems increasingly combine clustering, optimization, and machine learning to address sector-specific forecasting demands, particularly in industrial and isolated-grid forecasting settings where demand patterns vary significantly from conventional residential loads \cite{azeem2021}. In a similar vein, Zhang, et al. \cite{zhang2021} highlight that feature engineering and preprocessing are now treated as core determinants of forecasting performance rather than optional steps \cite{zhang2021}. This aligns with the systematic observations by Vivas, et al. \cite{vivas2020}, who argue that performance improvements in recent literature are often driven by the inclusion of exogenous variability sources rather than the learning model alone \cite{vivas2020}.
 
-Despite strong reported performance, hybrid models frequently suffer from limited transparency and weak generalizability. Many studies fail to assess if hybrid advantages hold up with distribution variations such as new seasons, policy changes, or renewable penetration. This suggests that hybrid forecasting systems, while powerful, are under-validated in deployment-representative situations.
+Despite strong reported performance, hybrid models frequently suffer from limited transparency and weak generalization. Many studies fail to assess if hybrid advantages hold up with distribution variations such as new seasons, policy changes, or renewable penetration. This suggests that hybrid forecasting systems, while powerful, are under-validated in deployment-representative situations.
 
 \subsection{Model Performance Reporting and Validation Limitations}
 
@@ -257,12 +238,11 @@ Modern load forecasting studies predominantly report performance using MAPE, RMS
 
 Another critical gap is the limited use of external validation. Many studies validate performance only through internal dataset splits, which can overestimate real-world deployment performance. This is particularly problematic for smart grid forecasting, where demand behavior shifts significantly under extreme weather events, renewable intermittency, and evolving economic conditions \cite{azeem2021,habbak2023}.
 
-Therefore, while modern ML forecasting accuracy appears improved relative to earlier approaches, the reliability of reported gains is often constrained by limited generalizability testing.
+Therefore, while modern ML forecasting accuracy appears improved relative to earlier approaches, the reliability of reported gains is often constrained by limited generalization testing.
 
 \subsection{Comparative Synthesis of ML Model Suitability}
 
-Synthesizing evidence suggests that model suitability follows a clear hierarchy based on forecasting horizon and dataset characteristics. The comparative synthesis of models along with its strengths and limitations are summarized in Table~\ref{tab:model_synthesis}.
-
+Synthesizing evidence suggests that model suitability follows a clear hierarchy based on forecasting horizon and dataset characteristics. The comparative synthesis of models along with their strengths and limitations is summarized in Table~\ref{tab:model_synthesis}.
 
 \section{Methodology of Literature Review}
 
@@ -318,9 +298,9 @@ Articles were excluded if they:
 
 \begin{itemize}
     \item Focused exclusively on long-term forecasting.
-    \item Addressed non-electricity domains without transferable methodology.
+    \item Addressed non-electricity domains without a transferable methodology.
     \item Lacked methodological transparency or quantitative evaluation.
-    \item Were non-peer-reviewed sources such as blogs or opinion articles.
+    \item Were non-peer-reviewed sources, such as blogs or opinion articles.
 \end{itemize}
 
 \subsection{Article Screening Process}
@@ -340,9 +320,8 @@ To address these limitations, this study proposes a systematic comparative evalu
 
 This approach contributes to the literature by bridging model comparison with feature sensitivity analysis, thereby offering deeper insight into both predictive accuracy and environmental dependency behavior in short-term load forecasting systems.
 
-
 \bibliographystyle{IEEEtran}
-\bibliography{references}
+\bibliography{References}
 
 \end{document}
 
