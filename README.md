@@ -99,7 +99,7 @@ These findings justify nonlinear modeling approaches and structured weather eval
 
 ---
 
-## 🛠 Tools and Libraries
+## Tools and Libraries
 
 - Python 3.x
 - Pandas
@@ -113,7 +113,7 @@ These findings justify nonlinear modeling approaches and structured weather eval
 
 ---
 
-## 🚀 How to Run the Code (Colab / Local)
+## How to Run the Code (Colab / Local)
 
 ### Clone Repository
 
