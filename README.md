@@ -39,7 +39,7 @@ The study utilizes the **ASHRAE Great Energy Predictor III dataset**, containing
 
 ---
 
-## 🎯 Research Objectives
+## Research Objectives
 
 - Develop a standardized experimental framework for fair model comparison.
 - Evaluate performance with and without meteorological variables.
