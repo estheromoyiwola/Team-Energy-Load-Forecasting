@@ -122,7 +122,7 @@ https://github.com/estheromoyiwola/Team-Energy-Load-Forecasting/blob/main/Team6.
 ---
 ## Team
 
-**Team Name:** GridSense Analytics
+**Team Name:** Team 6
 
 - Esther Omoyiwola— Electrical & Computer Engineering (Team Lead)
 - Tagayi Roland Kobla— Electrical & Computer Engineering
