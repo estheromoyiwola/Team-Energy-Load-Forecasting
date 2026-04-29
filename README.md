@@ -448,7 +448,7 @@ Future extensions should include:
 | Name | Department / Role |
 |---|---|
 | Esther Omoyiwola | Electrical and Computer Engineering; Team Lead |
-| Tagayi Roland Kobla | Electrical and Computer Engineering |
+| Roland Kobla Tagayi | Electrical and Computer Engineering |
 | Yvonne Okafor | Computer Science |
 | Akinfewa Ayobami | Mechanical Engineering |
 
